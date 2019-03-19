@@ -1,0 +1,43 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion androidCompileSdkVersion
+    buildToolsVersion androidBuildToolsVersion
+    defaultConfig {
+        applicationId "com.starwars"
+        minSdkVersion androidMinSdkVersion
+        targetSdkVersion androidTargetSdkVersion
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    def uiDependencies = rootProject.ext.uiDependencies
+    def uiTestDepencencies = rootProject.ext.uiTestDependencies
+    implementation uiDependencies.kotlinStdLib
+    implementation uiDependencies.appCompat
+    implementation uiDependencies.androidxCore
+    implementation uiDependencies.androidAnnotations
+    implementation uiDependencies.navigationFragmentKtx
+    implementation uiDependencies.navigationUiKtx
+    implementation uiDependencies.koin
+    implementation uiDependencies.koinCore
+    implementation uiDependencies.koinViewModel
+    implementation uiDependencies.constraintLayout
+    implementation 'androidx.appcompat:appcompat:1.0.0-beta01'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.2'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0-beta01'
+}
