@@ -27,6 +27,7 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     def uiDependencies = rootProject.ext.uiDependencies
     def uiTestDepencencies = rootProject.ext.uiTestDependencies
+
     implementation uiDependencies.kotlinStdLib
     implementation uiDependencies.appCompat
     implementation uiDependencies.androidxCore
@@ -37,7 +38,13 @@ dependencies {
     implementation uiDependencies.koinCore
     implementation uiDependencies.koinViewModel
     implementation uiDependencies.constraintLayout
-    implementation 'androidx.appcompat:appcompat:1.0.0-beta01'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.2'
+    implementation uiDependencies.legacySupport
+    implementation uiDependencies.recyclerView
+
+    //Tests
+    implementation uiTestDependencies.junitTest
+    implementation uiTestDependencies.androidTest
+    implementation uiTestDependencies.espressoCore
+    implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0-beta01'
 }
