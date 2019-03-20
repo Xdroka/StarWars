@@ -1,42 +1,19 @@
 ext {
-    //Android
-    androidBuildToolsVersion = "28.0.3"
-    androidCompileSdkVersion = 28
-    androidMinSdkVersion = 19
-    androidTargetSdkVersion = 28
-
-    androidxVersion = '1.0.0'
-    glideVersion = '4.0.0'
-    constraintLayoutVersion = '2.0.0-alpha3'
-    appCompatVersion = '1.0.0-beta01'
-    androidxCoreVersion = '1.1.0-alpha05'
-    legacySupportVersion = '1.0.0-beta01'
-    recyclerViewVersion = '1.0.0'
-
-    //Test
-    androidTestVersion = '1.1.0-alpha4'
-    espressoCoreVersion = '3.1.0-alpha4'
-    junitVersion = '4.12'
-
-    //Libraries
-    ankoVersion = '0.10.5'
-    gsonVersion = '2.8.1'
-    koinVersion = "1.0.2"
-    coroutinesVersion = '1.0.1'
-
     uiDependencies = [
-            kotlinStdLib         : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version",
+            kotlinStdLib         : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion",
             appCompat            : "androidx.appcompat:appcompat:${appCompatVersion}",
             androidxCore         : "androidx.core:core-ktx:${androidxCoreVersion}",
             androidAnnotations   : "androidx.annotation:annotation:${androidxVersion}",
-            navigationFragmentKtx: "androidx.navigation:navigation-fragment-ktx:$nav_version",
-            navigationUiKtx      : "androidx.navigation:navigation-ui-ktx:$nav_version",
+            navigationFragmentKtx: "androidx.navigation:navigation-fragment-ktx:$navigationVersion",
+            navigationUiKtx      : "androidx.navigation:navigation-ui-ktx:$navigationVersion",
             koin                 : "org.koin:koin-android:${koinVersion}",
             koinCore             : "org.koin:koin-core:${koinVersion}",
             koinViewModel        : "org.koin:koin-android-viewmodel:${koinVersion}",
             constraintLayout     : "androidx.constraintlayout:constraintlayout:${constraintLayoutVersion}",
             legacySupport        : "androidx.legacy:legacy-support-v4:${legacySupportVersion}",
-            recyclerView         : "androidx.recyclerview:recyclerview:${recyclerViewVersion}"
+            recyclerView         : "androidx.recyclerview:recyclerview:${recyclerViewVersion}",
+            cardView             : "androidx.cardview:cardview:${cardViewVersion}",
+            material             : "com.google.android.material:material:${materialVersion}"
     ]
 
     uiTestDependencies = [
@@ -45,7 +22,25 @@ ext {
             espressoCore: "androidx.test.espresso:espresso-core:${espressoCoreVersion}"
     ]
 
+    presentationDependencies = [
+            kotlin            : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${kotlinVersion}",
+            androidAnnotations: "androidx.annotation:annotation:${androidxVersion}",
+            archRuntime       : "androidx.lifecycle:lifecycle-runtime:${lifecycleVersion}",
+            archExtensions    : "androidx.lifecycle:lifecycle-extensions:${lifecycleVersion}",
+            archCompiler      : "androidx.lifecycle:lifecycle-compiler:${lifecycleVersion}",
+    ]
+
+    presentationTestDependencies = [
+            junit      : "junit:junit:${junitVersion}",
+            kotlinJUnit: "org.jetbrains.kotlin:kotlin-test-junit:${kotlinVersion}",
+            runner     : "com.android.support.test:runner:${runnerVersion}"
+    ]
+
     domainDependencies = [
+
+    ]
+
+    dataDependencies = [
 
     ]
 }

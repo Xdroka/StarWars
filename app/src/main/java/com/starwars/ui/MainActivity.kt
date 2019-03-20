@@ -17,12 +17,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupLinks(){
-        filmsHomeImageView?.setOnClickListener { navController.navigate(R.id.action_homeFragment_to_filmsFragment) }
-        filmsHomeImageView?.setOnLongClickListener { toast("teste") }
-        speciesHomeImageView?.setOnClickListener { navController.navigate(R.id.action_homeFragment_to_especiesFragment) }
+        filmsHomeImageView.setOnClickListener { navController.navigate(R.id.action_homeFragment_to_filmsFragment) }
+        filmsHomeImageView.setOnLongClickListener { toast("teste") }
+        speciesHomeImageView.setOnClickListener { navController.navigate(R.id.action_homeFragment_to_especiesFragment) }
     }
 
-    override fun onNavigateUp(): Boolean {
-        return navController.navigateUp()
-    }
+    override fun onNavigateUp(): Boolean = navController.navigateUp()
 }

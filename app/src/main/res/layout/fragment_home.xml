@@ -6,7 +6,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/space"
-        tools:context=".ui.HomeFragment">
+        tools:context=".ui.fragments.HomeFragment">
 
 
     <ImageView
@@ -33,7 +33,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:background="@color/transparent_white">
 
-        <com.starwars.customViews.ImageViewRounded
+        <com.starwars.ui.customViews.ImageViewRounded
                 android:id="@+id/filmsHomeImageView"
                 android:layout_width="0dp"
                 android:layout_height="134dp"
@@ -46,22 +46,19 @@
                 app:layout_constraintStart_toStartOf="parent"
         />
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
+                style="@style/TextViewBerkshire.size18sp.White"
                 android:id="@+id/filmHomeTextView"
                 android:text="@string/films_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:fontFamily="@font/berkshire_swash"
-                android:textSize="18sp"
-                android:textColor="@android:color/white"
                 app:layout_constraintTop_toBottomOf="@+id/filmsHomeImageView"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintEnd_toEndOf="parent"
-        />
+                app:layout_constraintEnd_toEndOf="parent"/>
 
-        <com.starwars.customViews.ImageViewRounded
+        <com.starwars.ui.customViews.ImageViewRounded
                 android:id="@+id/speciesHomeImageView"
                 android:layout_width="0dp"
                 android:layout_height="134dp"
@@ -74,15 +71,13 @@
                 app:layout_constraintTop_toBottomOf="@+id/filmHomeTextView"
         />
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
+                style="@style/TextViewBerkshire.size18sp.White"
                 android:id="@+id/speciesHomeTextView"
                 android:text="@string/species_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:fontFamily="@font/berkshire_swash"
-                android:textSize="18sp"
-                android:textColor="@android:color/white"
                 android:layout_marginBottom="16dp"
                 app:layout_constraintTop_toBottomOf="@+id/speciesHomeImageView"
                 app:layout_constraintStart_toStartOf="parent"

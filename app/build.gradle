@@ -25,8 +25,6 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    def uiDependencies = rootProject.ext.uiDependencies
-    def uiTestDepencencies = rootProject.ext.uiTestDependencies
 
     implementation uiDependencies.kotlinStdLib
     implementation uiDependencies.appCompat
@@ -40,11 +38,11 @@ dependencies {
     implementation uiDependencies.constraintLayout
     implementation uiDependencies.legacySupport
     implementation uiDependencies.recyclerView
+    implementation uiDependencies.cardView
+    implementation uiDependencies.material
 
     //Tests
     implementation uiTestDependencies.junitTest
     implementation uiTestDependencies.androidTest
     implementation uiTestDependencies.espressoCore
-    implementation 'androidx.cardview:cardview:1.0.0'
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0-beta01'
 }
