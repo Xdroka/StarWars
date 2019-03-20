@@ -30,11 +30,6 @@ dependencies {
         add("implementation", it.value)
     }
 
-    //Tests
-    testImplementation uiTestDependencies.junitTest
-    androidTestImplementation uiTestDependencies.androidTest
-    androidTestImplementation uiTestDependencies.espressoCore
-
     //module links
     api project(path: ':presentation')
     api project(path: ':domain')

@@ -1,4 +1,4 @@
-package com.e.presentation
+package com.starwars.presentation
 
 import kotlinx.coroutines.Dispatchers
 import kotlin.coroutines.CoroutineContext

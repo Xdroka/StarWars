@@ -1,6 +1,6 @@
 @file:Suppress("CanBeParameter")
 
-package com.e.presentation
+package com.starwars.presentation
 
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.OnLifecycleEvent

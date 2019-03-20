@@ -13,13 +13,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        setupLinks()
-    }
-
-    private fun setupLinks(){
-        filmsHomeImageView.setOnClickListener { navController.navigate(R.id.action_homeFragment_to_filmsFragment) }
-        filmsHomeImageView.setOnLongClickListener { toast("teste") }
-        speciesHomeImageView.setOnClickListener { navController.navigate(R.id.action_homeFragment_to_especiesFragment) }
     }
 
     override fun onNavigateUp(): Boolean = navController.navigateUp()

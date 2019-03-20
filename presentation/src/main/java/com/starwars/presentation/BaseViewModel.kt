@@ -1,4 +1,4 @@
-package com.e.presentation
+package com.starwars.presentation
 
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.ViewModel

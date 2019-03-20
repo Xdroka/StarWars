@@ -12,7 +12,6 @@ android {
         versionName androidVersionName
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
     }
 
     buildTypes {
@@ -28,10 +27,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     presentationDependencies.each {
-        add("implementation", it.value)
+        add(it.configuration, it.dependency)
     }
-
-    testImplementation presentationTestDependencies.junit
-    androidTestImplementation presentationTestDependencies.runner
 
 }

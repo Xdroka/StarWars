@@ -14,7 +14,9 @@ ext {
             recyclerView         : "androidx.recyclerview:recyclerview:${recyclerViewVersion}",
             cardView             : "androidx.cardview:cardview:${cardViewVersion}",
             material             : "com.google.android.material:material:${materialVersion}",
-            coroutinesCore    : "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion"
+            coroutinesCore       : "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion",
+            coroutinesAdapter    : "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:"
+                    + "${coroutineAdapterVersion}"
     ]
 
     uiTestDependencies = [
@@ -24,14 +26,13 @@ ext {
     ]
 
     presentationDependencies = [
-            kotlin            : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${kotlinVersion}",
-            androidAnnotations: "androidx.annotation:annotation:${androidxVersion}",
-            archRuntime       : "androidx.lifecycle:lifecycle-runtime:${lifecycleVersion}",
-            archExtensions    : "androidx.lifecycle:lifecycle-extensions:${lifecycleVersion}",
-            archCompiler      : "androidx.lifecycle:lifecycle-compiler:${lifecycleVersion}",
-            coroutinesCore    : "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion",
-            coroutinesAndroid : "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion",
-            coroutinesAdapter : "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:${coroutineAdapterVersion}",
+            [configuration: "implementation", dependency: "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${kotlinVersion}"],
+            [configuration: "implementation", dependency: "androidx.annotation:annotation:${androidxVersion}"],
+            [configuration: "implementation", dependency: "androidx.lifecycle:lifecycle-runtime:${lifecycleVersion}"],
+            [configuration: "implementation", dependency: "androidx.lifecycle:lifecycle-extensions:${lifecycleVersion}"],
+            [configuration: "annotationProcessor", dependency: "androidx.lifecycle:lifecycle-compiler:${lifecycleVersion}"],
+            [configuration: "implementation", dependency: "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion"],
+            [configuration: "implementation", dependency: "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"],
     ]
 
     presentationTestDependencies = [
@@ -41,6 +42,7 @@ ext {
     ]
 
     domainDependencies = [
+            kotlin: "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${kotlinVersion}",
 
     ]
 
