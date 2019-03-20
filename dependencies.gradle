@@ -13,7 +13,8 @@ ext {
             legacySupport        : "androidx.legacy:legacy-support-v4:${legacySupportVersion}",
             recyclerView         : "androidx.recyclerview:recyclerview:${recyclerViewVersion}",
             cardView             : "androidx.cardview:cardview:${cardViewVersion}",
-            material             : "com.google.android.material:material:${materialVersion}"
+            material             : "com.google.android.material:material:${materialVersion}",
+            coroutinesCore    : "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion"
     ]
 
     uiTestDependencies = [
@@ -28,6 +29,9 @@ ext {
             archRuntime       : "androidx.lifecycle:lifecycle-runtime:${lifecycleVersion}",
             archExtensions    : "androidx.lifecycle:lifecycle-extensions:${lifecycleVersion}",
             archCompiler      : "androidx.lifecycle:lifecycle-compiler:${lifecycleVersion}",
+            coroutinesCore    : "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion",
+            coroutinesAndroid : "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion",
+            coroutinesAdapter : "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:${coroutineAdapterVersion}",
     ]
 
     presentationTestDependencies = [

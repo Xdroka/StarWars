@@ -1,4 +1,4 @@
-package com.starwars.ui.customViews
+package com.starwars.customviews
 
 import android.content.Context
 import android.util.AttributeSet

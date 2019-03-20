@@ -27,11 +27,9 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation presentationDependencies.kotlin
-    implementation presentationDependencies.androidAnnotations
-    implementation presentationDependencies.archRuntime
-    implementation presentationDependencies.archExtensions
-    implementation presentationDependencies.archCompiler
+    presentationDependencies.each {
+        add("implementation", it.value)
+    }
 
     testImplementation presentationTestDependencies.junit
     androidTestImplementation presentationTestDependencies.runner

@@ -33,7 +33,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:background="@color/transparent_white">
 
-        <com.starwars.ui.customViews.ImageViewRounded
+        <com.starwars.customviews.ImageViewRounded
                 android:id="@+id/filmsHomeImageView"
                 android:layout_width="0dp"
                 android:layout_height="134dp"
@@ -58,7 +58,7 @@
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintEnd_toEndOf="parent"/>
 
-        <com.starwars.ui.customViews.ImageViewRounded
+        <com.starwars.customviews.ImageViewRounded
                 android:id="@+id/speciesHomeImageView"
                 android:layout_width="0dp"
                 android:layout_height="134dp"

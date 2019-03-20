@@ -26,23 +26,16 @@ android {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
 
-    implementation uiDependencies.kotlinStdLib
-    implementation uiDependencies.appCompat
-    implementation uiDependencies.androidxCore
-    implementation uiDependencies.androidAnnotations
-    implementation uiDependencies.navigationFragmentKtx
-    implementation uiDependencies.navigationUiKtx
-    implementation uiDependencies.koin
-    implementation uiDependencies.koinCore
-    implementation uiDependencies.koinViewModel
-    implementation uiDependencies.constraintLayout
-    implementation uiDependencies.legacySupport
-    implementation uiDependencies.recyclerView
-    implementation uiDependencies.cardView
-    implementation uiDependencies.material
+    uiDependencies.each{
+        add("implementation", it.value)
+    }
 
     //Tests
-    implementation uiTestDependencies.junitTest
-    implementation uiTestDependencies.androidTest
-    implementation uiTestDependencies.espressoCore
+    testImplementation uiTestDependencies.junitTest
+    androidTestImplementation uiTestDependencies.androidTest
+    androidTestImplementation uiTestDependencies.espressoCore
+
+    //module links
+    api project(path: ':presentation')
+    api project(path: ':domain')
 }

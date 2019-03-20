@@ -4,13 +4,21 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
+import com.e.presentation.SpeciesViewModel
 import com.starwars.R
+import com.starwars.base.BaseFragment
+import org.koin.android.viewmodel.ext.android.viewModel
 
-class SpeciesFragment : Fragment() {
+class SpeciesFragment : BaseFragment() {
+    private val viewModel by viewModel<SpeciesViewModel>()
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        lifecycleObserver = viewModel
+        super.onCreate(savedInstanceState)
+    }
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_species, container, false)
     }
-
 
 }
