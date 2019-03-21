@@ -33,4 +33,5 @@ dependencies {
     //module links
     api project(path: ':presentation')
     api project(path: ':domain')
+    api project(path: ':data')
 }

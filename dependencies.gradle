@@ -16,7 +16,9 @@ ext {
             material             : "com.google.android.material:material:${materialVersion}",
             coroutinesCore       : "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion",
             coroutinesAdapter    : "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:"
-                    + "${coroutineAdapterVersion}"
+                    + "${coroutineAdapterVersion}",
+            ankoCommons          : "org.jetbrains.anko:anko-commons:$ankoVersion",
+            ankoDesign           : "org.jetbrains.anko:anko-design:$ankoVersion"
     ]
 
     uiTestDependencies = [
@@ -29,10 +31,14 @@ ext {
             [configuration: "implementation", dependency: "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${kotlinVersion}"],
             [configuration: "implementation", dependency: "androidx.annotation:annotation:${androidxVersion}"],
             [configuration: "implementation", dependency: "androidx.lifecycle:lifecycle-runtime:${lifecycleVersion}"],
-            [configuration: "implementation", dependency: "androidx.lifecycle:lifecycle-extensions:${lifecycleVersion}"],
-            [configuration: "annotationProcessor", dependency: "androidx.lifecycle:lifecycle-compiler:${lifecycleVersion}"],
-            [configuration: "implementation", dependency: "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion"],
-            [configuration: "implementation", dependency: "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"],
+            [configuration: "implementation", dependency: "androidx.lifecycle:lifecycle-extensions:" +
+                    "${lifecycleVersion}"],
+            [configuration: "annotationProcessor", dependency: "androidx.lifecycle:lifecycle-compiler:" +
+                    "${lifecycleVersion}"],
+            [configuration: "implementation", dependency: "org.jetbrains.kotlinx:kotlinx-coroutines-core:" +
+                    "$coroutinesVersion"],
+            [configuration: "implementation", dependency: "org.jetbrains.kotlinx:kotlinx-coroutines-android:" +
+                    "$coroutinesVersion"],
     ]
 
     presentationTestDependencies = [
@@ -47,6 +53,9 @@ ext {
     ]
 
     dataDependencies = [
-
+            kotlin          : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${kotlinVersion}",
+            retrofit        : "com.squareup.retrofit2:retrofit:$retrofitVersion",
+            retrofitGson    : "com.squareup.retrofit2:converter-gson:$retrofitVersion",
+            coroutineAdapter: "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:${coroutineAdapterVersion}"
     ]
 }

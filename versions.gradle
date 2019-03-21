@@ -31,4 +31,5 @@ ext{
     coroutinesVersion = '1.0.1'
     lifecycleVersion = '2.0.0'
     coroutineAdapterVersion = '0.9.2'
+    retrofitVersion = "2.5.0"
 }
