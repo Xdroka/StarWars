@@ -8,8 +8,9 @@
 
     <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/itemSpecieImageView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="134dp"
+            android:layout_height="0dp"
+            android:adjustViewBounds="true"
             android:layout_marginStart="8dp"
             android:layout_marginBottom="8dp"
             android:layout_marginTop="8dp"

@@ -18,29 +18,35 @@ class SpeciesViewModel(
 
     @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
     fun requestAllSpecies(){
-        if(flowState.value?.status == Status.LOADING) return
-
+        if(currentStatus == Status.LOADING) return
         flowState.postValue(loading())
+        currentStatus = Status.LOADING
         viewModelScope.launch(contextProvider.io) {
             val response = interactor.getSpecies(currentPage)
             withContext(contextProvider.ui){
                 when(response){
-                    is Response.Failure -> flowState.postValue(failure(response.throwable))
-                    is Response.Success -> flowState.postValue(success(response.data))
+                    is Response.Failure -> {
+                        currentStatus = Status.ERROR
+                        flowState.postValue(failure(response.throwable))
+                    }
+                    is Response.Success -> {
+                        currentStatus = Status.SUCCESS
+                        if(response.data.isEmpty()) noMoreResults = true
+                        flowState.postValue(success(response.data))
+                    }
                 }
             }
         }
     }
 
     override fun next() {
-        currentStatus = flowState.value?.status
         super.next()
         requestAllSpecies()
     }
 
     override fun refresh() {
-        currentStatus = flowState.value?.status
         super.refresh()
+        requestAllSpecies()
     }
 
     fun getMainFlow(): LiveData<FlowState<MutableList<Specie>>> = flowState

@@ -1,18 +1,21 @@
 package com.starwars.ui.extensions
 
 import android.content.Context
+import android.view.View
+import android.widget.ImageView
 import android.widget.Toast
+import androidx.annotation.IdRes
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+import com.squareup.picasso.Picasso
+import com.starwars.data.remote.service.BASE_URL_IMAGE
 
 fun Context.toast(
     message: String,
     duration: Int = Toast.LENGTH_SHORT
 ) {
-    Toast.makeText(this, message, duration).apply {
-
-    }.show()
+    Toast.makeText(this, message, duration).show()
 }
 
 fun RecyclerView.createScrollListener(
@@ -31,6 +34,21 @@ fun RecyclerView.createScrollListener(
     })
 }
 
-fun SwipeRefreshLayout.loading() { isRefreshing = true }
+fun SwipeRefreshLayout.loading() {
+    isRefreshing = true
+}
 
-fun SwipeRefreshLayout.stopLoading() { isRefreshing = false }
+fun SwipeRefreshLayout.stopLoading() {
+    isRefreshing = false
+}
+
+fun ImageView.loadUrl(url: String, @IdRes placeholder: Int? = null) {
+    Picasso.get()
+        .load(BASE_URL_IMAGE + url)
+        .apply { placeholder?.let { placeholder(it) } }
+        .into(this)
+}
+
+fun View.hide() { visibility = View.GONE }
+
+fun View.show() { visibility = View.VISIBLE }

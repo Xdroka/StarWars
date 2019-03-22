@@ -17,6 +17,7 @@ ext{
     recyclerViewVersion = '1.0.0'
     cardViewVersion = '1.0.0'
     materialVersion = '1.0.0'
+    picassoVersion = '2.71828'
 
     //Test
     androidTestVersion = '1.1.0-alpha4'

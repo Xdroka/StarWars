@@ -1,15 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:app="http://schemas.android.com/apk/res-auto"
-            xmlns:tools="http://schemas.android.com/tools" android:id="@+id/nav_graph"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/nav_graph"
             app:startDestination="@id/homeFragment">
-    <fragment android:id="@+id/homeFragment" android:name="com.starwars.ui.fragments.HomeFragment" android:label="fragment_home"
-              tools:layout="@layout/fragment_home">
-        <action android:id="@+id/action_homeFragment_to_filmsFragment" app:destination="@id/filmsFragment"/>
-        <action android:id="@+id/action_homeFragment_to_especiesFragment" app:destination="@id/especiesFragment"/>
+
+    <fragment android:id="@+id/homeFragment"
+              android:name="com.starwars.ui.fragments.HomeFragment"
+              tools:layout="@layout/fragment_home" android:label="Home">
+
+        <action android:id="@+id/action_homeFragment_to_filmsFragment"
+                app:destination="@id/filmsFragment"/>
+
+        <action android:id="@+id/action_homeFragment_to_especiesFragment"
+                app:destination="@id/especiesFragment"/>
+
     </fragment>
-    <fragment android:id="@+id/filmsFragment" android:name="com.starwars.ui.fragments.FilmsFragment" android:label="fragment_films"
+
+    <fragment android:id="@+id/filmsFragment"
+              android:name="com.starwars.ui.fragments.FilmsFragment"
+              android:label="Filmes"
               tools:layout="@layout/fragment_films"/>
-    <fragment android:id="@+id/especiesFragment" android:name="com.starwars.ui.fragments.SpeciesFragment"
-              android:label="fragment_especies" tools:layout="@layout/fragment_species"/>
+
+    <fragment android:id="@+id/especiesFragment"
+              android:name="com.starwars.ui.fragments.SpeciesFragment"
+              android:label="Especies"
+              tools:layout="@layout/fragment_species"/>
 </navigation>

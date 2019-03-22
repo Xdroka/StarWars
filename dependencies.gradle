@@ -18,7 +18,8 @@ ext {
             coroutinesAdapter    : "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:"
                     + "${coroutineAdapterVersion}",
             ankoCommons          : "org.jetbrains.anko:anko-commons:$ankoVersion",
-            ankoDesign           : "org.jetbrains.anko:anko-design:$ankoVersion"
+            ankoDesign           : "org.jetbrains.anko:anko-design:$ankoVersion",
+            picasso              : "com.squareup.picasso:picasso:${picassoVersion}"
     ]
 
     uiTestDependencies = [
@@ -39,7 +40,7 @@ ext {
             [configuration: "implementation", dependency: "org.jetbrains.kotlinx:kotlinx-coroutines-core:" +
                     "$coroutinesVersion"],
             [configuration: "implementation", dependency: "org.jetbrains.kotlinx:kotlinx-coroutines-android:" +
-                    "$coroutinesVersion"],
+                    "$coroutinesVersion"]
     ]
 
     presentationTestDependencies = [

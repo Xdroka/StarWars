@@ -10,8 +10,8 @@ const val BASE_URL_IMAGE = "https://starwars-visualguide.com/assets/img/"
 const val ID_PATH = "id"
 
 //EndPoints
-const val SPECIES_ENDPOINT = "species/{$ID_PATH}"
+const val SPECIES_ENDPOINT = "species/"
 
 //Media Endpoints
-const val SPECIES_MEDIA_ENDPOINT = "species/%d"
+const val SPECIES_MEDIA_ENDPOINT = "species/%d.jpg"
 

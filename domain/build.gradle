@@ -1,8 +1,8 @@
 apply plugin: 'kotlin'
 
 dependencies {
+    implementation project(path: ':data')
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    api project(path: ':data')
 
     domainDependencies.each {
         add("implementation", it.value)

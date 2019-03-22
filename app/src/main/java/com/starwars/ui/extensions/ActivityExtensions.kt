@@ -13,3 +13,13 @@ fun AppCompatActivity.showMessageDialog(message: Int, title: Int? = null, yesBut
     }
     alertDialog.show()
 }
+
+fun AppCompatActivity.setToolbar(toolbarId: Int, titleString: Any? = null, setUpNavigation: Boolean = false) {
+    setSupportActionBar(findViewById(toolbarId))
+    supportActionBar?.setDisplayHomeAsUpEnabled(setUpNavigation)
+    supportActionBar?.title = when(titleString){
+        is Int -> getString(titleString)
+        null -> null
+        else -> titleString.toString()
+    }
+}
