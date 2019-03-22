@@ -10,10 +10,11 @@
               tools:layout="@layout/fragment_home" android:label="Home">
 
         <action android:id="@+id/action_homeFragment_to_filmsFragment"
-                app:destination="@id/filmsFragment"/>
+                app:destination="@id/filmsFragment" app:exitAnim="@anim/nav_default_exit_anim"/>
 
         <action android:id="@+id/action_homeFragment_to_especiesFragment"
-                app:destination="@id/especiesFragment"/>
+                app:destination="@id/especiesFragment" app:enterAnim="@anim/nav_default_pop_enter_anim"
+                app:exitAnim="@anim/nav_default_exit_anim"/>
 
     </fragment>
 
@@ -25,5 +26,11 @@
     <fragment android:id="@+id/especiesFragment"
               android:name="com.starwars.ui.fragments.SpeciesFragment"
               android:label="Especies"
-              tools:layout="@layout/fragment_species"/>
+              tools:layout="@layout/fragment_species">
+        <action android:id="@+id/action_especiesFragment_to_specieDetailsFragment"
+                app:destination="@id/specieDetailsFragment" app:enterAnim="@anim/nav_default_enter_anim"
+                app:exitAnim="@anim/nav_default_exit_anim"/>
+    </fragment>
+    <fragment android:id="@+id/specieDetailsFragment" android:name="com.starwars.SpecieDetailsFragment"
+              android:label="Detalhes da Especie" tools:layout="@layout/fragment_specie_details"/>
 </navigation>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            tools:context=".SpecieDetailsFragment">
+
+        <ImageView
+                android:id="@+id/specieDetailsImageView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:layout_marginEnd="32dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:contentDescription="@string/specie_details_description"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:src="@tools:sample/avatars"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+                style="@style/TextViewBerkshire.size18sp.Bold"
+                android:id="@+id/nameSpecieDetailsTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="32sp"
+                android:layout_marginTop="28dp"
+                android:layout_marginStart="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/specieDetailsImageView"
+                app:layout_constraintStart_toStartOf="@+id/specieDetailsImageView"
+                tools:text="Hutt"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+                style="@style/TextViewCreteRound.Size20sp"
+                android:id="@+id/classSpecieDetailsTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/nameSpecieDetailsTv"
+                app:layout_constraintStart_toStartOf="@+id/nameSpecieDetailsTv"
+                tools:text="Classificação: Gastropod"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+                style="@style/TextViewCreteRound.Size20sp"
+                android:id="@+id/averageLifeSpecieDetailsTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/classSpecieDetailsTv"
+                app:layout_constraintStart_toStartOf="@+id/classSpecieDetailsTv"
+                tools:text="Vida média: 100 anos"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+                style="@style/TextViewCreteRound.Size20sp"
+                android:id="@+id/languageSpecieDetailsTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/averageLifeSpecieDetailsTv"
+                app:layout_constraintStart_toStartOf="@+id/averageLifeSpecieDetailsTv"
+                tools:text="Linguagem: Huttese"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+                style="@style/TextViewCreteRound.Size20sp"
+                android:id="@+id/skinColorSpecieDetailsTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/languageSpecieDetailsTv"
+                app:layout_constraintStart_toStartOf="@+id/languageSpecieDetailsTv"
+                tools:text="Cor(es) da Pele: Green, Brown, Tan"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+                style="@style/TextViewCreteRound.Size20sp"
+                android:id="@+id/skinHairSpecieDetailsTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/skinColorSpecieDetailsTv"
+                app:layout_constraintStart_toStartOf="@+id/skinColorSpecieDetailsTv"
+                tools:text="Cor(es) do cabelo: n/a"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

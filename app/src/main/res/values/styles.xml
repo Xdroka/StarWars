@@ -23,5 +23,11 @@
         <item name="layoutManager">androidx.recyclerview.widget.LinearLayoutManager</item>
         <item name="android:fitsSystemWindows">true</item>
     </style>
+    <style name="TextViewCreteRound">
+        <item name="android:fontFamily">@font/crete_round</item>
+    </style>
+    <style name="TextViewCreteRound.Size20sp">
+        <item name="android:textSize">20sp</item>
+    </style>
 
 </resources>
