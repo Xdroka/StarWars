@@ -7,4 +7,6 @@
     <string name="logo">logo</string>
     <string name="films_label">Filmes</string>
     <string name="species_label">Especies</string>
+    <string name="http_error_message">Ocorreu um erro na requisição com o servidor</string>
+    <string name="error_generic">Ocorreu um erro inesperado</string>
 </resources>

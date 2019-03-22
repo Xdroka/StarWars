@@ -19,5 +19,9 @@
     <style name="TextViewBerkshire.size18sp.Bold">
         <item name="android:textStyle">bold</item>
     </style>
+    <style name="RecyclerViewDefault">
+        <item name="layoutManager">androidx.recyclerview.widget.LinearLayoutManager</item>
+        <item name="android:fitsSystemWindows">true</item>
+    </style>
 
 </resources>

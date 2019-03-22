@@ -30,6 +30,7 @@ ext {
     presentationDependencies = [
             [configuration: "implementation", dependency: "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${kotlinVersion}"],
             [configuration: "implementation", dependency: "androidx.annotation:annotation:${androidxVersion}"],
+            [configuration: "implementation", dependency: "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion"],
             [configuration: "implementation", dependency: "androidx.lifecycle:lifecycle-runtime:${lifecycleVersion}"],
             [configuration: "implementation", dependency: "androidx.lifecycle:lifecycle-extensions:" +
                     "${lifecycleVersion}"],

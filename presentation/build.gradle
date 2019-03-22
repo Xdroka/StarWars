@@ -25,6 +25,7 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    api project(path: ':domain')
 
     presentationDependencies.each {
         add(it.configuration, it.dependency)
