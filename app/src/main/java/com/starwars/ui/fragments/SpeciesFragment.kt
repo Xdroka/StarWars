@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.DividerItemDecoration
 import com.starwars.R
 import com.starwars.base.BaseFragment
 import com.starwars.domain.model.Specie
@@ -14,10 +13,7 @@ import com.starwars.presentation.FlowState
 import com.starwars.presentation.SpeciesViewModel
 import com.starwars.presentation.Status.*
 import com.starwars.ui.adapters.SpecieListAdapter
-import com.starwars.ui.extensions.createScrollListener
-import com.starwars.ui.extensions.loading
-import com.starwars.ui.extensions.stopLoading
-import com.starwars.ui.extensions.toJson
+import com.starwars.ui.extensions.*
 import kotlinx.android.synthetic.main.fragment_species.*
 import org.koin.android.viewmodel.ext.android.viewModel
 
@@ -37,7 +33,7 @@ class SpeciesFragment : BaseFragment() {
     override fun addListeners() {
         specieListFragmentRv.apply {
             adapter = speciesAdapter
-            activity?.let { addItemDecoration(DividerItemDecoration(it, it.requestedOrientation)) }
+            activity?.let { this.addDefaultDecorator(it) }
             createScrollListener(
                 conditionFunction = { lastVisibleItem ->
                     lastVisibleItem == speciesAdapter.specieList.size && !viewModel.noMoreResults && !viewModel.loading

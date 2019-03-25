@@ -24,7 +24,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                tools:src="@tools:sample/avatars"/>
+                tools:src="@tools:sample/avatars[2]"/>
 
         <androidx.appcompat.widget.AppCompatTextView
                 style="@style/TextViewBerkshire.size18sp.Bold"

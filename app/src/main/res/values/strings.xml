@@ -15,4 +15,5 @@
     <string name="average_life_format">Média de vida: %s</string>
     <string name="skin_color_format">Cor(es) da pele: %s</string>
     <string name="skin_hair_format">Cor(es) do cabelo: %s</string>
+    <string name="characters_label">Personagens</string>
 </resources>

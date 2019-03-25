@@ -1,10 +1,12 @@
 package com.starwars.ui.extensions
 
+import android.app.Activity
 import android.content.Context
 import android.view.View
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.annotation.IdRes
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
@@ -47,6 +49,10 @@ fun ImageView.loadUrl(url: String, @IdRes placeholder: Int? = null) {
         .load(BASE_URL_IMAGE + url)
         .apply { placeholder?.let { placeholder(it) } }
         .into(this)
+}
+
+fun RecyclerView.addDefaultDecorator(activity: Activity) {
+    addItemDecoration(DividerItemDecoration(activity, activity.requestedOrientation))
 }
 
 fun View.hide() { visibility = View.GONE }

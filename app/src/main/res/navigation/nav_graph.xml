@@ -15,6 +15,7 @@
         <action android:id="@+id/action_homeFragment_to_especiesFragment"
                 app:destination="@id/especiesFragment" app:enterAnim="@anim/nav_default_pop_enter_anim"
                 app:exitAnim="@anim/nav_default_exit_anim"/>
+        <action android:id="@+id/action_homeFragment_to_charactersFragment" app:destination="@id/charactersFragment"/>
 
     </fragment>
 
@@ -35,4 +36,6 @@
               android:label="Detalhes da Especie" tools:layout="@layout/fragment_specie_details">
         <argument android:name="specie" app:argType="string"/>
     </fragment>
+    <fragment android:id="@+id/charactersFragment" android:name="com.starwars.CharactersFragment"
+              android:label="Personagens" tools:layout="@layout/fragment_characters"/>
 </navigation>

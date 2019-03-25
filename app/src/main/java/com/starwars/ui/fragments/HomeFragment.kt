@@ -4,11 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.starwars.R
 import com.starwars.base.BaseFragment
-import com.starwars.ui.extensions.toast
 import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : BaseFragment() {
@@ -20,7 +18,7 @@ class HomeFragment : BaseFragment() {
 
     override fun addListeners() {
         filmsHomeImageView.setOnClickListener { navController.navigate(R.id.action_homeFragment_to_filmsFragment) }
-        filmsHomeImageView.setOnLongClickListener { activity?.toast("teste") }
         speciesHomeImageView.setOnClickListener { navController.navigate(R.id.action_homeFragment_to_especiesFragment) }
+        charactersHomeIv.setOnClickListener { navController.navigate(R.id.action_homeFragment_to_charactersFragment) }
     }
 }
