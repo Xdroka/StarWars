@@ -36,6 +36,6 @@
               android:label="Detalhes da Especie" tools:layout="@layout/fragment_specie_details">
         <argument android:name="specie" app:argType="string"/>
     </fragment>
-    <fragment android:id="@+id/charactersFragment" android:name="com.starwars.CharactersFragment"
+    <fragment android:id="@+id/charactersFragment" android:name="com.starwars.ui.fragments.CharactersFragment"
               android:label="Personagens" tools:layout="@layout/fragment_characters"/>
 </navigation>

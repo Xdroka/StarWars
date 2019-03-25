@@ -47,7 +47,6 @@ class SpeciesViewModel(
         viewModelScope.coroutineContext.cancelChildren()
     }
 
-
     override fun refresh() {
         super.refresh()
         requestAllSpecies()
