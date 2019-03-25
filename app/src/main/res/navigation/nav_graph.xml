@@ -7,15 +7,19 @@
 
     <fragment android:id="@+id/homeFragment"
               android:name="com.starwars.ui.fragments.HomeFragment"
-              tools:layout="@layout/fragment_home" android:label="Home">
+              tools:layout="@layout/fragment_home"
+              android:label="Home">
 
         <action android:id="@+id/action_homeFragment_to_filmsFragment"
-                app:destination="@id/filmsFragment" app:exitAnim="@anim/nav_default_exit_anim"/>
+                app:destination="@id/filmsFragment"
+                app:exitAnim="@anim/nav_default_exit_anim"/>
 
         <action android:id="@+id/action_homeFragment_to_especiesFragment"
-                app:destination="@id/especiesFragment" app:enterAnim="@anim/nav_default_pop_enter_anim"
+                app:destination="@id/especiesFragment"
+                app:enterAnim="@anim/nav_default_pop_enter_anim"
                 app:exitAnim="@anim/nav_default_exit_anim"/>
-        <action android:id="@+id/action_homeFragment_to_charactersFragment" app:destination="@id/charactersFragment"/>
+        <action android:id="@+id/action_homeFragment_to_charactersFragment"
+                app:destination="@id/charactersFragment"/>
 
     </fragment>
 
@@ -28,14 +32,38 @@
               android:name="com.starwars.ui.fragments.SpeciesFragment"
               android:label="Especies"
               tools:layout="@layout/fragment_species">
+
         <action android:id="@+id/action_especiesFragment_to_specieDetailsFragment"
-                app:destination="@+id/specieDetailsFragment" app:enterAnim="@anim/nav_default_enter_anim"
+                app:destination="@+id/specieDetailsFragment"
+                app:enterAnim="@anim/nav_default_enter_anim"
                 app:exitAnim="@anim/nav_default_exit_anim"/>
+
     </fragment>
-    <fragment android:id="@+id/specieDetailsFragment" android:name="com.starwars.ui.fragments.SpecieDetailsFragment"
-              android:label="Detalhes da Especie" tools:layout="@layout/fragment_specie_details">
+
+    <fragment android:id="@+id/specieDetailsFragment"
+              android:name="com.starwars.ui.fragments.SpecieDetailsFragment"
+              android:label="Detalhes da Especie"
+              tools:layout="@layout/fragment_specie_details">
         <argument android:name="specie" app:argType="string"/>
+
     </fragment>
-    <fragment android:id="@+id/charactersFragment" android:name="com.starwars.ui.fragments.CharactersFragment"
-              android:label="Personagens" tools:layout="@layout/fragment_characters"/>
+
+    <fragment android:id="@+id/charactersFragment"
+              android:name="com.starwars.ui.fragments.CharactersFragment"
+              android:label="Personagens"
+              tools:layout="@layout/fragment_characters">
+
+        <action android:id="@+id/action_charactersFragment_to_characterDetailsFragment"
+                app:destination="@id/characterDetailsFragment"/>
+
+    </fragment>
+
+    <fragment android:id="@+id/characterDetailsFragment"
+              android:name="com.starwars.ui.fragments.CharacterDetailsFragment"
+              android:label="Detalhes do Personagem"
+              tools:layout="@layout/fragment_character_details">
+
+        <argument android:name="character" app:argType="string"/>
+
+    </fragment>
 </navigation>

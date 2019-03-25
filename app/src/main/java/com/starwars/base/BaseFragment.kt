@@ -1,15 +1,11 @@
 package com.starwars.base
 
-import android.app.Activity
 import android.os.Bundle
 import android.view.View
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.LifecycleObserver
-import androidx.recyclerview.widget.DividerItemDecoration
-import androidx.recyclerview.widget.RecyclerView
 import com.starwars.R
 import com.starwars.ui.extensions.showMessageDialog
 import retrofit2.HttpException
@@ -32,9 +28,11 @@ open class BaseFragment : Fragment(), ViewActions {
         lifecycleObserver?.let { lifecycle.addObserver(it) }
     }
 
-    override fun onDestroy() {
+
+    override fun onStop() {
         lifecycleObserver?.let { lifecycle.removeObserver(it) }
-        super.onDestroy()
+        lifecycleObserver = null
+        super.onStop()
     }
 
     @Suppress("MemberVisibilityCanBePrivate")

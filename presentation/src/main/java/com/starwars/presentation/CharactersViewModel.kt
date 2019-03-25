@@ -9,6 +9,7 @@ import com.starwars.presentation.FlowState.Companion.loading
 import com.starwars.presentation.FlowState.Companion.success
 import kotlinx.coroutines.cancelChildren
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class CharactersViewModel(
     private val contextProvider: ThreadContextProvider,
@@ -23,18 +24,20 @@ class CharactersViewModel(
         flowState.value = loading()
         viewModelScope.launch(contextProvider.io){
             val response = interactor.getCharacters(currentPage)
-            when(response){
-                is Response.Failure -> {
-                    error = true
-                    flowState.value = failure(response.throwable)
+            withContext(contextProvider.ui) {
+                when (response) {
+                    is Response.Failure -> {
+                        error = true
+                        flowState.value = failure(response.throwable)
+                    }
+                    is Response.Success -> {
+                        error = false
+                        if (response.data.isEmpty()) noMoreResults = true
+                        flowState.value = success(response.data)
+                    }
                 }
-                is Response.Success -> {
-                    error = false
-                    if(response.data.isEmpty()) noMoreResults = true
-                    flowState.value = success(response.data)
-                }
+                next()
             }
-            next()
         }
     }
 

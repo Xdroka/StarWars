@@ -20,9 +20,9 @@
                 android:id="@+id/imageViewCustomRounded"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:scaleType="centerCrop"
                 android:adjustViewBounds="true"
                 android:contentDescription="@string/category_images"
-                tools:src="@drawable/films"
         />
 
     </androidx.cardview.widget.CardView>

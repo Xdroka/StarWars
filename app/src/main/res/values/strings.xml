@@ -16,4 +16,8 @@
     <string name="skin_color_format">Cor(es) da pele: %s</string>
     <string name="skin_hair_format">Cor(es) do cabelo: %s</string>
     <string name="characters_label">Personagens</string>
+    <string name="gender_format">Genero: %s</string>
+    <string name="height_format">Altura: %s</string>
+    <string name="mass_format">Massa: %s</string>
+    <string name="home_world_format">Planeta Natal: %s</string>
 </resources>

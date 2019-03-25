@@ -9,7 +9,7 @@ class SpecieInteractorImpl(
     private val repository: SpeciesRepository
 ): SpecieInteractor{
     override suspend fun getSpecies(page: Int): Response<MutableList<Specie>> {
-        val response = repository.getSpecie(page)
+        val response = repository.getSpecies(page)
         return when(response){
             is Response.Failure -> response
             is Response.Success -> Response.Success(response.data.toMutableList())

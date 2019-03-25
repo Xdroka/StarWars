@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import com.starwars.R
 import com.starwars.base.BaseFragment
 import com.starwars.domain.model.Character
@@ -12,16 +13,19 @@ import com.starwars.presentation.CharactersViewModel
 import com.starwars.presentation.FlowState
 import com.starwars.presentation.Status.*
 import com.starwars.ui.adapters.CharacterListAdapter
-import com.starwars.ui.extensions.addDefaultDecorator
-import com.starwars.ui.extensions.createScrollListener
-import com.starwars.ui.extensions.loading
-import com.starwars.ui.extensions.stopLoading
+import com.starwars.ui.extensions.*
 import kotlinx.android.synthetic.main.fragment_characters.*
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class CharactersFragment : BaseFragment() {
     private val viewModel: CharactersViewModel by viewModel()
     private val charAdapter = makeAdapter()
+    private val navController by lazy { findNavController() }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        lifecycleObserver = viewModel
+        super.onCreate(savedInstanceState)
+    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
         inflater.inflate(R.layout.fragment_characters, container, false)
@@ -70,7 +74,13 @@ class CharactersFragment : BaseFragment() {
         }
     }
 
-    private fun makeAdapter() = CharacterListAdapter {
-        
+    override fun onStop() {
+        viewModel.getMainFlow().removeObservers(this)
+        super.onStop()
+    }
+
+    private fun makeAdapter() = CharacterListAdapter {character ->
+        val action = CharactersFragmentDirections.actionCharactersFragmentToCharacterDetailsFragment(character.toJson())
+        navController.navigate(action)
     }
 }
