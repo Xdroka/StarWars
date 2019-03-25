@@ -1,6 +1,7 @@
 package com.starwars.data.remote.model
 
 import com.google.gson.annotations.SerializedName
+import com.starwars.data.remote.service.*
 
 data class CharacterResponse(
     val created: String? = null,
@@ -10,10 +11,10 @@ data class CharacterResponse(
     val mass: String? = null,
     val name: String? = null,
     val url: String? = null,
-    val species: List<String> = listOf("n/a"),
-    @SerializedName("homeworld") val homeWorld: String? = null,
-    @SerializedName("eye_color") val eyeColor: String? = null,
-    @SerializedName("birth_year") val birthYear: String? = null,
-    @SerializedName("hair_color") val hairColor: String? = null,
-    @SerializedName("skin_color") val skinColor: String? = null
+    val species: List<String> = listOf(noneField),
+    @SerializedName(homeWorldField) val homeWorld: String? = null,
+    @SerializedName(eyeColorField) val eyeColor: String? = null,
+    @SerializedName(birthDayField) val birthYear: String? = null,
+    @SerializedName(hairColorField) val hairColor: String? = null,
+    @SerializedName(skinColorField) val skinColor: String? = null
 )

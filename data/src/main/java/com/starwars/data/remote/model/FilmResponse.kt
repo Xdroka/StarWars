@@ -1,17 +1,23 @@
 package com.starwars.data.remote.model
 
+import com.google.gson.annotations.SerializedName
+import com.starwars.data.remote.service.episodeIdField
+import com.starwars.data.remote.service.openingCrawlField
+import com.starwars.data.remote.service.releaseDateField
+import com.starwars.data.remote.service.starShipField
+
 data class FilmResponse(
     val created: String = "",
     val director: String = "",
     val edited: String = "",
-    val episode_id: Int = 0,
-    val opening_crawl: String = "",
     val planets: List<String> = listOf(),
     val producer: String = "",
-    val release_date: String = "",
     val species: List<String> = listOf(),
-    val starships: List<String> = listOf(),
     val title: String = "",
     val url: String = "",
-    val vehicles: List<Any> = listOf()
+    val vehicles: List<Any> = listOf(),
+    @SerializedName(episodeIdField) val episodeId: Int = 0,
+    @SerializedName(openingCrawlField) val openingCrawl: String = "",
+    @SerializedName(releaseDateField) val releaseDate: String = "",
+    @SerializedName(starShipField) val starShips: List<String> = listOf()
 )
