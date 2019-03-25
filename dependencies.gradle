@@ -19,7 +19,8 @@ ext {
                     + "${coroutineAdapterVersion}",
             ankoCommons          : "org.jetbrains.anko:anko-commons:$ankoVersion",
             ankoDesign           : "org.jetbrains.anko:anko-design:$ankoVersion",
-            picasso              : "com.squareup.picasso:picasso:${picassoVersion}"
+            picasso              : "com.squareup.picasso:picasso:${picassoVersion}",
+            gson                 : "com.google.code.gson:gson:${gsonVersion}"
     ]
 
     uiTestDependencies = [

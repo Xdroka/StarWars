@@ -1,6 +1,5 @@
 package com.starwars.base
 
-import android.app.Activity
 import android.os.Bundle
 import android.view.View
 import androidx.annotation.StringRes
@@ -8,7 +7,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.LifecycleObserver
 import com.starwars.R
-import com.starwars.ui.MainActivity
 import com.starwars.ui.extensions.showMessageDialog
 import retrofit2.HttpException
 
@@ -30,11 +28,12 @@ open class BaseFragment : Fragment(), ViewActions {
         lifecycleObserver?.let { lifecycle.addObserver(it) }
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
+    override fun onDestroy() {
         lifecycleObserver?.let { lifecycle.removeObserver(it) }
+        super.onDestroy()
     }
 
+    @Suppress("MemberVisibilityCanBePrivate")
     fun showMessageDialog(
         @StringRes message: Int,
         @StringRes title: Int? = null,

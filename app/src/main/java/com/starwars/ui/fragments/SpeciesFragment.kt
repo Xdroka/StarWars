@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import com.starwars.R
 import com.starwars.base.BaseFragment
@@ -16,12 +17,14 @@ import com.starwars.ui.adapters.SpecieListAdapter
 import com.starwars.ui.extensions.createScrollListener
 import com.starwars.ui.extensions.loading
 import com.starwars.ui.extensions.stopLoading
+import com.starwars.ui.extensions.toJson
 import kotlinx.android.synthetic.main.fragment_species.*
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class SpeciesFragment : BaseFragment() {
     private val viewModel by viewModel<SpeciesViewModel>()
     private val speciesAdapter = makeAdapter()
+    private val navController by lazy { findNavController() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         lifecycleObserver = viewModel
@@ -37,11 +40,10 @@ class SpeciesFragment : BaseFragment() {
             activity?.let { addItemDecoration(DividerItemDecoration(it, it.requestedOrientation)) }
             createScrollListener(
                 conditionFunction = { lastVisibleItem ->
-                    lastVisibleItem == speciesAdapter.specieList.size && !viewModel.noMoreResults
-                            && viewModel.getMainFlow().value?.status != LOADING
+                    lastVisibleItem == speciesAdapter.specieList.size && !viewModel.noMoreResults && !viewModel.loading
                 },
                 function = {
-                    viewModel.next()
+                    viewModel.requestAllSpecies()
                 })
         }
         swipeRefreshSpecieList.setOnRefreshListener {
@@ -72,17 +74,18 @@ class SpeciesFragment : BaseFragment() {
                     )
                 }
             }
+            else -> {}
         }
     }
 
-    @Suppress("UNUSED_ANONYMOUS_PARAMETER")
     private fun makeAdapter() = SpecieListAdapter { specie ->
-
+        val actions = SpeciesFragmentDirections.actionEspeciesFragmentToSpecieDetailsFragment(specie.toJson())
+        navController.navigate(actions)
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
+    override fun onStop() {
         viewModel.getMainFlow().removeObservers(this)
+        super.onStop()
     }
 
 }

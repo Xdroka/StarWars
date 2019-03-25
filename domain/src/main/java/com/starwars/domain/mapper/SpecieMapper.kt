@@ -1,6 +1,7 @@
 package com.starwars.domain.mapper
 
 import com.starwars.data.remote.model.SpecieListResponse
+import com.starwars.data.remote.model.SpecieResponse
 import com.starwars.domain.model.Specie
 import java.lang.Exception
 
@@ -15,9 +16,15 @@ fun SpecieListResponse?.toMutableList(): MutableList<Specie> =
             hairColors = it.hairColors ?: "",
             skinColors = it.skinColors ?: "",
             averageHeight = it.averageHeight ?: "",
-            averageLifespan = it.averageLifespan ?: ""
+            averageLifespan = getAverageLife(it)
         )
     }?.toMutableList() ?: mutableListOf()
+
+private fun getAverageLife(it: SpecieResponse): String {
+    return it.averageLifespan?.let { averageLife ->
+        if (averageLife == "unknown") averageLife else "$averageLife anos"
+    } ?: ""
+}
 
 private fun getId(url: String?): Int =
     try {

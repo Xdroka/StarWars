@@ -12,4 +12,7 @@
     <string name="classification_format">Classificação: %s</string>
     <string name="language_format">Linguagem: %s</string>
     <string name="specie_details_description">specieImage</string>
+    <string name="average_life_format">Média de vida: %s</string>
+    <string name="skin_color_format">Cor(es) da pele: %s</string>
+    <string name="skin_hair_format">Cor(es) do cabelo: %s</string>
 </resources>

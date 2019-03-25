@@ -28,9 +28,11 @@
               android:label="Especies"
               tools:layout="@layout/fragment_species">
         <action android:id="@+id/action_especiesFragment_to_specieDetailsFragment"
-                app:destination="@id/specieDetailsFragment" app:enterAnim="@anim/nav_default_enter_anim"
+                app:destination="@+id/specieDetailsFragment" app:enterAnim="@anim/nav_default_enter_anim"
                 app:exitAnim="@anim/nav_default_exit_anim"/>
     </fragment>
-    <fragment android:id="@+id/specieDetailsFragment" android:name="com.starwars.SpecieDetailsFragment"
-              android:label="Detalhes da Especie" tools:layout="@layout/fragment_specie_details"/>
+    <fragment android:id="@+id/specieDetailsFragment" android:name="com.starwars.ui.fragments.SpecieDetailsFragment"
+              android:label="Detalhes da Especie" tools:layout="@layout/fragment_specie_details">
+        <argument android:name="specie" app:argType="string"/>
+    </fragment>
 </navigation>

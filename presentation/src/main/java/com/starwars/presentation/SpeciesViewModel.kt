@@ -7,6 +7,7 @@ import com.starwars.domain.model.Specie
 import com.starwars.presentation.FlowState.Companion.failure
 import com.starwars.presentation.FlowState.Companion.loading
 import com.starwars.presentation.FlowState.Companion.success
+import kotlinx.coroutines.cancelChildren
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
@@ -18,31 +19,34 @@ class SpeciesViewModel(
 
     @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
     fun requestAllSpecies(){
-        if(currentStatus == Status.LOADING) return
-        flowState.postValue(loading())
-        currentStatus = Status.LOADING
+        if(loading) return
+        loading = true
+        flowState.value = loading()
         viewModelScope.launch(contextProvider.io) {
             val response = interactor.getSpecies(currentPage)
             withContext(contextProvider.ui){
                 when(response){
                     is Response.Failure -> {
-                        currentStatus = Status.ERROR
-                        flowState.postValue(failure(response.throwable))
+                        error = true
+                        flowState.value = failure(response.throwable)
                     }
                     is Response.Success -> {
-                        currentStatus = Status.SUCCESS
+                        error = false
                         if(response.data.isEmpty()) noMoreResults = true
-                        flowState.postValue(success(response.data))
+                        flowState.value = success(response.data)
                     }
                 }
+                next()
             }
         }
     }
 
-    override fun next() {
-        super.next()
-        requestAllSpecies()
+    @OnLifecycleEvent(Lifecycle.Event.ON_STOP)
+    fun neutral(){
+        flowState.value = FlowState.neutral()
+        viewModelScope.coroutineContext.cancelChildren()
     }
+
 
     override fun refresh() {
         super.refresh()
