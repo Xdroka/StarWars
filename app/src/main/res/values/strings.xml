@@ -22,5 +22,5 @@
     <string name="home_world_format">Planeta Natal: %s</string>
     <string name="director_format">Diretor: %s</string>
     <string name="producer_format">Produtor: %s</string>
-    <string name="launch_date_format">Data de lançamento:</string>
+    <string name="launch_date_format">Data de lançamento: %s</string>
 </resources>

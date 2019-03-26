@@ -32,7 +32,7 @@ class FilmDetailsFragment : BaseFragment() {
         } catch (e: JsonSyntaxException) { handleErrors(e); return }
         filmDetailsImageView.loadUrl(FILMS_MEDIA_ENDPOINT.format(film.id))
         titleFilmDetailsTv.text = film.title
-        val df = DateFormat.getDateInstance(DateFormat.SHORT, Locale("pt"))
+        val df = DateFormat.getDateInstance(DateFormat.LONG, Locale("pt"))
         dateFilmDetailsTv.text = getString(R.string.launch_date_format).format(df.format(film.releaseDate))
         directorDetailsFilmTv.text = getString(R.string.director_format).format(film.director)
         producerDetailsFilmTv.text = getString(R.string.producer_format).format(film.producer)
