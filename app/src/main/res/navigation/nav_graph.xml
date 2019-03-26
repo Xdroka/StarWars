@@ -26,7 +26,10 @@
     <fragment android:id="@+id/filmsFragment"
               android:name="com.starwars.ui.fragments.FilmsFragment"
               android:label="Filmes"
-              tools:layout="@layout/fragment_films"/>
+              tools:layout="@layout/fragment_films">
+        <action android:id="@+id/action_filmsFragment_to_filmDetailsFragment"
+                app:destination="@id/filmDetailsFragment"/>
+    </fragment>
 
     <fragment android:id="@+id/especiesFragment"
               android:name="com.starwars.ui.fragments.SpeciesFragment"
@@ -66,4 +69,12 @@
         <argument android:name="character" app:argType="string"/>
 
     </fragment>
+
+    <fragment android:id="@+id/filmDetailsFragment"
+              android:name="com.starwars.FilmDetailsFragment"
+              android:label="Detalhes do Filme"
+              tools:layout="@layout/fragment_film_details">
+        <argument android:name="film" app:argType="string"/>
+    </fragment>
+
 </navigation>

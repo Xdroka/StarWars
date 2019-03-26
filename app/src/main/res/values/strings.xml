@@ -20,4 +20,7 @@
     <string name="height_format">Altura: %s cm</string>
     <string name="mass_format">Massa: %s kg</string>
     <string name="home_world_format">Planeta Natal: %s</string>
+    <string name="director_format">Diretor: %s</string>
+    <string name="producer_format">Produtor: %s</string>
+    <string name="launch_date_format">Data de lançamento:</string>
 </resources>
