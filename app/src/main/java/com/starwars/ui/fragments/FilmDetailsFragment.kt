@@ -1,4 +1,4 @@
-package com.starwars
+package com.starwars.ui.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.navArgs
 import com.google.gson.JsonSyntaxException
+import com.starwars.R
 import com.starwars.base.BaseFragment
 import com.starwars.data.remote.service.FILMS_MEDIA_ENDPOINT
 import com.starwars.domain.model.Film

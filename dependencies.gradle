@@ -20,7 +20,10 @@ ext {
             ankoCommons          : "org.jetbrains.anko:anko-commons:$ankoVersion",
             ankoDesign           : "org.jetbrains.anko:anko-design:$ankoVersion",
             picasso              : "com.squareup.picasso:picasso:${picassoVersion}",
-            gson                 : "com.google.code.gson:gson:${gsonVersion}"
+            gson                 : "com.google.code.gson:gson:${gsonVersion}",
+//            firebaseCore         : "com.google.firebase:firebase-core:${firebaseCoreVersion}",
+//            firebaseCrash        : "com.google.firebase:firebase-crash:${firebaseCrashVersion}",
+            crashlytics          : "com.crashlytics.sdk.android:crashlytics:${crashlyticsVersion}"
     ]
 
     uiTestDependencies = [

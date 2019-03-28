@@ -18,6 +18,9 @@ ext{
     cardViewVersion = '1.0.0'
     materialVersion = '1.0.0'
     picassoVersion = '2.71828'
+    firebaseCrashVersion = '16.2.0'
+    crashlyticsVersion = '2.9.9'
+    firebaseCoreVersion = '16.0.7'
 
     //Test
     androidTestVersion = '1.1.0-alpha4'

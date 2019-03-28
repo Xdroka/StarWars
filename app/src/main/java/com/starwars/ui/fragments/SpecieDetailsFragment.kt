@@ -5,8 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.navArgs
-import com.google.gson.Gson
-import com.google.gson.JsonSyntaxException
 import com.starwars.R
 import com.starwars.base.BaseFragment
 import com.starwars.data.remote.service.SPECIES_MEDIA_ENDPOINT

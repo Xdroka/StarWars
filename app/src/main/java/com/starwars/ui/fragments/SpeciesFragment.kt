@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
-import androidx.navigation.fragment.findNavController
 import com.starwars.R
 import com.starwars.base.BaseFragment
 import com.starwars.domain.model.Specie
@@ -20,7 +19,6 @@ import org.koin.android.viewmodel.ext.android.viewModel
 class SpeciesFragment : BaseFragment() {
     private val viewModel by viewModel<SpeciesViewModel>()
     private val speciesAdapter = makeAdapter()
-    private val navController by lazy { findNavController() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         lifecycleObserver = viewModel
