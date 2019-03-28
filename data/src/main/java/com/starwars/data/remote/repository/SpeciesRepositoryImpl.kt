@@ -7,7 +7,7 @@ import com.starwars.data.remote.service.SpeciesWebService
 import com.starwars.data.remote.service.apiCall
 
 class SpeciesRepositoryImpl(
-    private val service: SpeciesWebService
+    private val specieService: SpeciesWebService
 ) : SpeciesRepository {
     private var lastPage: Int? = null
 
@@ -16,7 +16,7 @@ class SpeciesRepositoryImpl(
             lastPage = null
             return Response.Success(SpecieListResponse(results = listOf()))
         }
-        val response = apiCall { service.getAllSpecies(page) }
+        val response = apiCall { specieService.getAllSpecies(page) }
         return when(response){
             is Response.Failure -> response
             is Response.Success -> {
@@ -27,5 +27,5 @@ class SpeciesRepositoryImpl(
     }
 
     override suspend fun getSpecie(specieId: Int): Response<SpecieResponse> =
-            apiCall{ service.getSpecie(specieId) }
+            apiCall{ specieService.getSpecie(specieId) }
 }

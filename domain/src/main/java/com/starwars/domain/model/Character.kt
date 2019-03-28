@@ -5,6 +5,6 @@ data class Character(
     val name: String,
     val gender: String,
     val height: String,
-    val homeWorld: String,
+    var birthYear: String,
     val mass: String
 )

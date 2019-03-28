@@ -80,7 +80,7 @@
 
         <androidx.appcompat.widget.AppCompatTextView
                 style="@style/TextViewCreteRound.Size20sp"
-                android:id="@+id/homeWorldCharDetailsTv"
+                android:id="@+id/birthYearCharDetailsTv"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"

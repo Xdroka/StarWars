@@ -1,13 +1,11 @@
 package com.starwars.di
 
-import com.starwars.data.remote.service.CharactersWebService
-import com.starwars.data.remote.service.FilmWebService
-import com.starwars.data.remote.service.SpeciesWebService
-import com.starwars.data.remote.service.createWebService
+import com.starwars.data.remote.service.*
 import org.koin.dsl.module.module
 
 val webServiceModule = module {
     single { createWebService<SpeciesWebService>() }
     single { createWebService<CharactersWebService>() }
-    single { createWebService<FilmWebService>()}
+    single { createWebService<FilmWebService>() }
+    single { createWebService<PlanetWebService>() }
 }

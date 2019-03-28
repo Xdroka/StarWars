@@ -19,8 +19,9 @@
     <string name="gender_format">Genero: %s</string>
     <string name="height_format">Altura: %s cm</string>
     <string name="mass_format">Massa: %s kg</string>
-    <string name="home_world_format">Planeta Natal: %s</string>
+    <string name="birth_year_format">Ano de Nascimento: %s</string>
     <string name="director_format">Diretor: %s</string>
     <string name="producer_format">Produtor: %s</string>
-    <string name="launch_date_format">Data de lançamento: %s</string>
+    <string name="launch_date_format">Lançamento: %s</string>
+    <string name="birth_year_format2">Nasceu em: %s</string>
 </resources>

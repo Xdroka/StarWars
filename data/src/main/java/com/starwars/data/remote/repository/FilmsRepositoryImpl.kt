@@ -6,7 +6,7 @@ import com.starwars.data.remote.service.FilmWebService
 import com.starwars.data.remote.service.apiCall
 
 class FilmsRepositoryImpl(
-    private val service: FilmWebService
+    private val filmService: FilmWebService
 ) : FilmsRepository {
     private var lastPage: Int? = null
 
@@ -15,7 +15,7 @@ class FilmsRepositoryImpl(
             lastPage = null
             return Response.Success(FilmListResponse())
         }
-        val response = apiCall { service.getFilms(page) }
+        val response = apiCall { filmService.getFilms(page) }
         return when (response) {
             is Response.Failure -> response
             is Response.Success -> {

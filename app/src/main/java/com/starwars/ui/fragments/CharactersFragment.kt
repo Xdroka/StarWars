@@ -50,9 +50,7 @@ class CharactersFragment : BaseFragment() {
         }
     }
 
-    override fun addEvents() {
-        viewModel.getMainFlow().observe(this, Observer { handleWithMainFlow(it) })
-    }
+    override fun addEvents() = viewModel.getMainFlow().observe(this, Observer { handleWithMainFlow(it) })
 
     private fun handleWithMainFlow(flowState: FlowState<MutableList<Character>>?){
         when(flowState?.status){

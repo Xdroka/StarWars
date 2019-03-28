@@ -33,7 +33,7 @@ class SpeciesFragment : BaseFragment() {
     override fun addListeners() {
         specieListFragmentRv.apply {
             adapter = speciesAdapter
-            activity?.let { this.addDefaultDecorator(it) }
+            activity?.let { addDefaultDecorator(it) }
             createScrollListener(
                 conditionFunction = { lastVisibleItem ->
                     lastVisibleItem == speciesAdapter.specieList.size && !viewModel.noMoreResults && !viewModel.loading
@@ -49,9 +49,7 @@ class SpeciesFragment : BaseFragment() {
         }
     }
 
-    override fun addEvents() {
-        viewModel.getMainFlow().observe(this, Observer { handleWithMainFlow(it) })
-    }
+    override fun addEvents() = viewModel.getMainFlow().observe(this, Observer { handleWithMainFlow(it) })
 
     private fun handleWithMainFlow(flowState: FlowState<MutableList<Specie>>?) {
         when (flowState?.status) {

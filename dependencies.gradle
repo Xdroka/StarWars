@@ -56,9 +56,13 @@ ext {
     ]
 
     dataDependencies = [
-            kotlin          : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${kotlinVersion}",
-            retrofit        : "com.squareup.retrofit2:retrofit:$retrofitVersion",
-            retrofitGson    : "com.squareup.retrofit2:converter-gson:$retrofitVersion",
-            coroutineAdapter: "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:${coroutineAdapterVersion}"
+            [configuration: "implementation", dependency: "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${kotlinVersion}"],
+            [configuration: "implementation", dependency: "com.squareup.retrofit2:retrofit:$retrofitVersion"],
+            [configuration: "implementation", dependency: "com.squareup.retrofit2:converter-gson:$retrofitVersion"],
+            [configuration: "implementation", dependency: "com.jakewharton.retrofit:retrofit2-kotlin-" +
+                    "coroutines-adapter:${coroutineAdapterVersion}"],
+            [configuration: "implementation", dependency: "androidx.room:room-runtime:$roomVersion"],
+            [configuration: "kapt", dependency: "androidx.room:room-compiler:$roomVersion"],
+            [configuration: "implementation", dependency: "androidx.room:room-ktx:$roomVersion"]
     ]
 }

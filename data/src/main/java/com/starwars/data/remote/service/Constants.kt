@@ -13,6 +13,7 @@ const val ID_PATH = "id"
 const val SPECIES_ENDPOINT = "species/"
 const val CHARACTER_ENDPOINT = "people/"
 const val FILMS_ENDPOINT = "films/"
+const val PLANETS_ENDPOINT = "planets/"
 
 //Media Endpoints
 const val SPECIES_MEDIA_ENDPOINT = "${BASE_URL_IMAGE}species/%d.jpg"

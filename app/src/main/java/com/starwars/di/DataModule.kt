@@ -5,9 +5,11 @@ import org.koin.dsl.module.module
 
 val dataModule = module {
 
-    factory { SpeciesRepositoryImpl(service = get()) as SpeciesRepository }
+    factory { SpeciesRepositoryImpl(specieService = get()) as SpeciesRepository }
 
-    factory { CharacterRespositoryImpl(service = get()) as CharacterRepository }
+    factory { CharacterRespositoryImpl(characterService = get()) as CharacterRepository }
 
-    factory { FilmsRepositoryImpl(service = get()) as FilmsRepository }
+    factory { FilmsRepositoryImpl(filmService = get()) as FilmsRepository }
+
+    factory { PlanetRepositoryImpl(planetService = get()) as PlanetRepository }
 }

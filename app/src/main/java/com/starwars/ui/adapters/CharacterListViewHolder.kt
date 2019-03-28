@@ -14,7 +14,7 @@ class CharacterListViewHolder(view: View) : RecyclerView.ViewHolder(view) {
             setOnClickListener { onClick?.invoke(item) }
             itemCharacterImageView.loadUrl(CHARACTERS_MEDIA_ENDPOINT.format(item.id))
             itemNameCharacterTv.text = item.name
-            itemWorldCharacterTv.text = context.getString(R.string.home_world_format).format(item.homeWorld)
+            itemWorldCharacterTv.text = context.getString(R.string.birth_year_format2).format(item.birthYear)
         }
     }
 }

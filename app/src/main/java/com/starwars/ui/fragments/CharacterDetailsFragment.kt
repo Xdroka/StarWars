@@ -36,7 +36,7 @@ class CharacterDetailsFragment : BaseFragment() {
             genderCharDetailsTv.text = getString(R.string.gender_format).format(gender)
             heightCharDetailsTv.text = getString(R.string.height_format).format(height)
             massCharDetailsTv.text = getString(R.string.mass_format).format(mass)
-            homeWorldCharDetailsTv.text = getString(R.string.home_world_format).format(homeWorld)
+            birthYearCharDetailsTv.text = getString(R.string.birth_year_format).format(birthYear)
         }
     }
 

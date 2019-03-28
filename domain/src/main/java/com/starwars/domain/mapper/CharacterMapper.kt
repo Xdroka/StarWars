@@ -10,7 +10,7 @@ fun CharacterListResponse.toMutableList() =
             name = it.name ?: "",
             gender = it.gender ?: "n/a",
             height = it.height ?: "n/a",
-            homeWorld = it.homeWorld ?: "n/a",
+            birthYear = it.birthYear ?: "n/a",
             mass = it.mass ?: "n/a"
         )
     }.toMutableList()

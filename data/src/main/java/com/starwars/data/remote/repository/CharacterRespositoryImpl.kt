@@ -6,7 +6,7 @@ import com.starwars.data.remote.service.CharactersWebService
 import com.starwars.data.remote.service.apiCall
 
 class CharacterRespositoryImpl(
-    private val service: CharactersWebService
+    private val characterService: CharactersWebService
 ): CharacterRepository {
     private var lastPage: Int? = null
 
@@ -15,7 +15,7 @@ class CharacterRespositoryImpl(
             lastPage = null
             return Response.Success(CharacterListResponse())
         }
-        val response = apiCall { service.getCharacters(page) }
+        val response = apiCall { characterService.getCharacters(page) }
         return when(response){
             is Response.Failure -> response
             is Response.Success -> {
