@@ -71,7 +71,7 @@
     </fragment>
 
     <fragment android:id="@+id/filmDetailsFragment"
-              android:name="com.starwars.FilmDetailsFragment"
+              android:name="com.starwars.ui.fragments.FilmDetailsFragment"
               android:label="Detalhes do Filme"
               tools:layout="@layout/fragment_film_details">
         <argument android:name="film" app:argType="string"/>

@@ -3,6 +3,8 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 apply plugin: "androidx.navigation.safeargs.kotlin"
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'io.fabric'
 
 android {
     compileSdkVersion androidCompileSdkVersion
@@ -27,11 +29,9 @@ android {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
 
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0-beta01'
     uiDependencies.each {
         add("implementation", it.value)
     }
-
     //module links
     api project(path: ':presentation')
     api project(path: ':domain')

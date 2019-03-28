@@ -6,12 +6,14 @@ import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.LifecycleObserver
+import androidx.navigation.fragment.findNavController
 import com.starwars.R
 import com.starwars.ui.extensions.showMessageDialog
 import retrofit2.HttpException
 
 open class BaseFragment : Fragment(), ViewActions {
     open var lifecycleObserver: LifecycleObserver? = null
+    val navController by lazy { findNavController() }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
